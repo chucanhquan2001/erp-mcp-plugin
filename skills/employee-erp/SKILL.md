@@ -7,9 +7,9 @@ description: Sử dụng khi người dùng yêu cầu dữ liệu hoặc thao t
 
 ## Kiểm tra bản cập nhật
 
-Phiên bản của skill đi kèm bản phát hành này: `1.0.2`. Dấu kiểm tra: `ERP-SKILL-102`.
+Phiên bản của skill đi kèm bản phát hành này: `1.0.3`. Dấu kiểm tra: `ERP-SKILL-103`.
 
-Khi người dùng hỏi phiên bản plugin Employee ERP hoặc yêu cầu kiểm tra cập nhật plugin, trả lời ngắn gọn: “Đã nạp skill Employee ERP phiên bản 1.0.2 — ERP-SKILL-102.” Không gọi API ERP cho yêu cầu này. Đây chỉ là xác nhận nội dung skill đang được nạp, không xác nhận kết nối ERP hoặc khẳng định đây là bản mới nhất trên GitHub. Khi phát hành bản tiếp theo, cập nhật phiên bản và dấu kiểm tra này cùng với `version` trong manifest.
+Khi người dùng hỏi phiên bản plugin Employee ERP hoặc yêu cầu kiểm tra cập nhật plugin, trả lời ngắn gọn: “Đã nạp skill Employee ERP phiên bản 1.0.3 — ERP-SKILL-103.” Không gọi API ERP cho yêu cầu này. Đây chỉ là xác nhận nội dung skill đang được nạp, không xác nhận kết nối ERP hoặc khẳng định đây là bản mới nhất trên GitHub. Khi phát hành bản tiếp theo, cập nhật phiên bản và dấu kiểm tra này cùng với `version` trong manifest.
 
 ## Tra cứu và thao tác ERP
 
