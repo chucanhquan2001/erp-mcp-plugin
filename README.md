@@ -23,7 +23,7 @@ Nếu repository là private, tài khoản GitHub của nhân viên phải có q
 
 ## Phát hành bản cập nhật
 
-Kiểm tra bản `1.0.4`: sau khi đồng bộ marketplace, mở cuộc trò chuyện mới, chọn skill `employee-erp` và hỏi “Kiểm tra phiên bản plugin Employee ERP”. Kết quả mong đợi có `1.0.4` và dấu `ERP-SKILL-104`. Bước này xác nhận skill mới đã được nạp, không kiểm tra kết nối ERP.
+Kiểm tra bản `1.0.5`: sau khi đồng bộ marketplace, mở cuộc trò chuyện mới, chọn skill `employee-erp` và hỏi “Kiểm tra phiên bản plugin Employee ERP”. Kết quả mong đợi có `1.0.5` và dấu `ERP-SKILL-105`. Bước này xác nhận skill mới đã được nạp, không kiểm tra kết nối ERP.
 
 1. Sửa skill hoặc quy tắc và tăng `version` trong `.claude-plugin/plugin.json`; cập nhật phiên bản và dấu kiểm tra tương ứng trong `skills/employee-erp/SKILL.md` cùng ví dụ kiểm tra ở README.
 2. Chạy `claude plugin validate .` và kiểm tra thay đổi trước khi commit.
@@ -68,7 +68,7 @@ Sau khi sửa plugin, chạy `/reload-plugins` hoặc mở phiên mới.
 - `skills/employee-erp/references/rules.md`: quy tắc chung về quyền truy cập, bảo mật, phạm vi và dữ liệu đã xác minh.
 - `skills/employee-erp/references/query-rules.md`: quy tắc chọn tool, xử lý lỗi, phân trang và thiếu filter.
 - `skills/employee-erp/references/response-rules.md`: cách trả lời ngắn gọn, trình bày danh sách, liên kết và thông báo giới hạn.
-- `skills/employee-erp/references/org-hr-names.md`: mapping ID–tên ORG/HR và quy trình tra cứu tên.
+- `skills/employee-erp/references/id-mapping.md`: mapping ID–tên ORG/HR và quy trình tra cứu tên.
 
 Mỗi quy tắc được duy trì trong file phụ trách nhóm tương ứng. `SKILL.md` chỉ dẫn rõ file nào bắt buộc đọc và khi nào cần đọc hướng dẫn ORG/HR.
 
