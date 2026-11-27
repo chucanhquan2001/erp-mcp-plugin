@@ -60,5 +60,5 @@ Các path dưới đây là path tương đối cho `call_erp_api` nếu tool đ
 Đây là bước tìm ID trước khi gọi module đích, khác với enrich tên sau khi đã có dữ liệu:
 
 - Cơ sở/thương hiệu: dùng filter tên hợp lệ trên `org/branch` hoặc `org/brand`. Giữ nguyên cụm tên cơ sở người dùng cung cấp, không tự rút `Văn phòng Hà Nội` thành `Hà Nội`.
-- Nhân viên: dùng filter `fullname` hoặc name search được tài liệu HR và schema tool xác nhận. Nếu MCP thiếu filter/search tương ứng, áp dụng quy tắc thiếu filter trong `rules.md`, không tải danh sách nhân viên để dò tên.
+- Nhân viên: dùng filter `fullname` hoặc name search được tài liệu HR và schema tool xác nhận. Nếu MCP thiếu filter/search tương ứng, áp dụng quy tắc thiếu filter trong [query-rules.md](query-rules.md), không tải danh sách nhân viên để dò tên.
 - Nếu cần một ID nhưng kết quả mơ hồ, hiển thị tối đa 5 ứng viên và hỏi chọn một lần; chưa gọi module đích trong lượt hỏi. Khi đã xác định ID, tiếp tục truy vấn module đích để hoàn thành yêu cầu gốc. Không truyền tên tự do vào field ID.
