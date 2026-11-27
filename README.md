@@ -1,6 +1,34 @@
 # Plugin Employee MCP cho Claude Code
 
-Plugin mẫu đóng gói kết nối Employee ERP MCP cùng skill và các quy tắc sử dụng.
+Plugin đóng gói kết nối Employee ERP MCP cùng skill và các quy tắc sử dụng. Repository đồng thời cung cấp marketplace `ebomb-plugins`.
+
+## Cài đặt cho nhân viên trên Claude
+
+1. Mở **Customize → Plugins → Add → Add marketplace** trên Claude web hoặc Desktop.
+2. Nhập URL `https://github.com/chucanhquan2001/erp-mcp-plugin`.
+3. Chọn và cài plugin **employee-mcp-plugin**.
+4. Bật **Sync automatically** cho marketplace nếu muốn tự đồng bộ các lần cập nhật.
+5. Hoàn tất kết nối và xác thực Employee ERP khi được yêu cầu.
+
+Nếu repository là private, tài khoản GitHub của nhân viên phải có quyền đọc; kết nối GitHub và cấp quyền cho Claude GitHub App khi giao diện yêu cầu. Nếu đã cài bản ZIP, gỡ bản đó sau khi chuyển sang bản marketplace để tránh dùng trùng hai bản.
+
+Để lấy bản mới thủ công, mở marketplace trong **Customize → Plugins** và chọn **Check for updates**. Sau khi cập nhật, mở cuộc trò chuyện hoặc tác vụ mới để dùng các hướng dẫn mới.
+
+## Cài đặt qua Claude Code
+
+```text
+/plugin marketplace add https://github.com/chucanhquan2001/erp-mcp-plugin
+/plugin install employee-mcp-plugin@ebomb-plugins
+```
+
+## Phát hành bản cập nhật
+
+1. Sửa skill hoặc quy tắc và tăng `version` trong `.claude-plugin/plugin.json`.
+2. Chạy `claude plugin validate .` và kiểm tra thay đổi trước khi commit.
+3. Push bản đã kiểm tra lên nhánh `main` của repository GitHub.
+4. Kiểm tra marketplace trên Claude đã đồng bộ phiên bản mới.
+
+File `.claude-plugin/marketplace.json` khai báo plugin tại thư mục gốc bằng `source: "./"`; không cần nhân đôi thư mục plugin. Cấu hình kết nối không chứa thông tin đăng nhập của nhân viên.
 
 ## Điểm kết nối MCP
 
@@ -32,6 +60,7 @@ Sau khi sửa plugin, chạy `/reload-plugins` hoặc mở phiên mới.
 ## Tùy chỉnh
 
 - `.claude-plugin/plugin.json`: tên, phiên bản và mô tả plugin.
+- `.claude-plugin/marketplace.json`: danh sách plugin trong marketplace.
 - `.mcp.json`: cấu hình kết nối MCP.
 - `skills/employee-erp/SKILL.md`: quy trình dùng MCP.
 - `skills/employee-erp/references/rules.md`: các quy tắc sử dụng; thay hoặc bổ sung quy định thực tế đã được duyệt.
@@ -46,5 +75,6 @@ Ví dụ: tra cứu “Chúc Anh Quân” khi chưa có filter `fullname` hoặc
 
 ## Phạm vi
 
-Đây là mã nguồn plugin cho Claude Code, chưa cài vào ứng dụng khách hoặc phát hành lên marketplace.
-Kết nối thực tế, OAuth và việc phát hiện tool cần được kiểm tra trong phiên Claude Code đã đăng nhập.
+Đây là mã nguồn plugin và marketplace để cài từ repository GitHub. Việc cài đặt trên tài khoản Claude, đồng bộ tự động, kết nối thực tế, OAuth và việc phát hiện tool cần được kiểm tra trong phiên đã đăng nhập.
+
+Hướng dẫn chính thức: [cài và cập nhật plugin trên Claude](https://claude.com/docs/plugins/overview), [cấu trúc marketplace](https://code.claude.com/docs/en/plugins/marketplace-reference).

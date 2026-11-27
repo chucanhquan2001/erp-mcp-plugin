@@ -1,0 +1,16 @@
+{
+  "name": "ebomb-plugins",
+  "metadata": {
+    "description": "Các plugin hỗ trợ tra cứu và làm việc với ERP EBomb"
+  },
+  "owner": {
+    "name": "chucanhquan2001"
+  },
+  "plugins": [
+    {
+      "name": "employee-mcp-plugin",
+      "source": "./",
+      "description": "Tra cứu thông tin Employee ERP theo các quy tắc của tổ chức"
+    }
+  ]
+}

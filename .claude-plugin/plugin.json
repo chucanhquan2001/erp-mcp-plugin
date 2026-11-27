@@ -1,5 +1,8 @@
 {
   "name": "employee-mcp-plugin",
-  "version": "1.0.0",
-  "description": "Employee ERP MCP gateway connection and workflow instructions"
+  "version": "1.0.1",
+  "description": "Kết nối Employee ERP MCP và hướng dẫn tra cứu dữ liệu",
+  "author": {
+    "name": "chucanhquan2001"
+  }
 }
