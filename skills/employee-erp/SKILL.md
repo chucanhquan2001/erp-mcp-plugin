@@ -1,9 +1,17 @@
 ---
 name: employee-erp
-description: Sử dụng khi người dùng yêu cầu dữ liệu hoặc thao tác về nhân viên hay ERP thông qua Employee MCP gateway.
+description: Sử dụng khi người dùng yêu cầu dữ liệu hoặc thao tác về nhân viên hay ERP thông qua Employee MCP gateway, hoặc hỏi phiên bản và kiểm tra cập nhật plugin Employee ERP.
 ---
 
 # Quy trình làm việc với Employee ERP
+
+## Kiểm tra bản cập nhật
+
+Phiên bản của skill đi kèm bản phát hành này: `1.0.2`. Dấu kiểm tra: `ERP-SKILL-102`.
+
+Khi người dùng hỏi phiên bản plugin Employee ERP hoặc yêu cầu kiểm tra cập nhật plugin, trả lời ngắn gọn: “Đã nạp skill Employee ERP phiên bản 1.0.2 — ERP-SKILL-102.” Không gọi API ERP cho yêu cầu này. Đây chỉ là xác nhận nội dung skill đang được nạp, không xác nhận kết nối ERP hoặc khẳng định đây là bản mới nhất trên GitHub. Khi phát hành bản tiếp theo, cập nhật phiên bản và dấu kiểm tra này cùng với `version` trong manifest.
+
+## Tra cứu và thao tác ERP
 
 Đọc và tuân thủ `references/rules.md` trước khi sử dụng Employee MCP gateway. Áp dụng các quy tắc này cho mọi truy vấn dữ liệu, thao tác và câu trả lời cuối cùng.
 

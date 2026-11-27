@@ -23,7 +23,9 @@ Nếu repository là private, tài khoản GitHub của nhân viên phải có q
 
 ## Phát hành bản cập nhật
 
-1. Sửa skill hoặc quy tắc và tăng `version` trong `.claude-plugin/plugin.json`.
+Kiểm tra bản `1.0.2`: sau khi đồng bộ marketplace, mở cuộc trò chuyện mới, chọn skill `employee-erp` và hỏi “Kiểm tra phiên bản plugin Employee ERP”. Kết quả mong đợi có `1.0.2` và dấu `ERP-SKILL-102`. Bước này xác nhận skill mới đã được nạp, không kiểm tra kết nối ERP.
+
+1. Sửa skill hoặc quy tắc và tăng `version` trong `.claude-plugin/plugin.json`; cập nhật phiên bản và dấu kiểm tra tương ứng trong `skills/employee-erp/SKILL.md` cùng ví dụ kiểm tra ở README.
 2. Chạy `claude plugin validate .` và kiểm tra thay đổi trước khi commit.
 3. Push bản đã kiểm tra lên nhánh `main` của repository GitHub.
 4. Kiểm tra marketplace trên Claude đã đồng bộ phiên bản mới.
