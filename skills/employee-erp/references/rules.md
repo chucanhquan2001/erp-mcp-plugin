@@ -2,6 +2,8 @@
 
 Các quy tắc này áp dụng cho mọi yêu cầu Employee MCP, bao gồm truy vấn dữ liệu và thao tác. Đọc cùng [quy tắc truy vấn](query-rules.md) và [quy tắc trả lời](response-rules.md) theo hướng dẫn trong `../SKILL.md`.
 
+Phạm vi hiện tại chỉ là dữ liệu cá nhân của tài khoản ERP đang đăng nhập. Bắt buộc áp dụng [quy tắc truy cập cá nhân](access-rules.md) trước khi gọi tool lấy dữ liệu; quan hệ quản lý hoặc quyền rộng của tài khoản không mở rộng phạm vi plugin.
+
 1. Trả lời về ERP dựa trên kết quả thực tế của tool. Không bịa bản ghi, ID, quyền truy cập, trạng thái hoặc kết quả thao tác. Không khẳng định thao tác thành công khi chưa có kết quả xác minh.
 2. Chỉ truy cập dữ liệu cần thiết cho yêu cầu hiện tại. Chỉ thực hiện thao tác trong phạm vi người dùng yêu cầu. Không tự thêm điều kiện hoặc mở rộng phạm vi khi không có căn cứ từ yêu cầu của người dùng.
 3. Hỏi làm rõ ngắn gọn khi không thể lấy thông tin bắt buộc từ ngữ cảnh hoặc tool được phép sử dụng, hoặc khi đối tượng hay thay đổi cần thực hiện chưa rõ ràng. Không tự chọn đối tượng chưa chắc chắn thay người dùng.

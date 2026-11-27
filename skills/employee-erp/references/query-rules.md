@@ -2,6 +2,8 @@
 
 Đọc trước khi truy vấn hoặc thực hiện thao tác qua Employee MCP gateway.
 
+Trước khi tra cứu tên/ID, lấy bản ghi, đếm hoặc báo cáo, phải vượt qua bước xác minh phạm vi cá nhân trong [access-rules.md](access-rules.md). Các hướng dẫn tra cứu bên dưới chỉ áp dụng trong phạm vi đã xác minh; không gọi tool lấy dữ liệu để thử quyền.
+
 1. Chỉ sử dụng tool do MCP server đang kết nối cung cấp và tuân thủ schema đầu vào thực tế. Không đoán tham số, filter, toán tử hoặc giá trị enum; chỉ dùng những gì tool hoặc tài liệu đã xác minh của thao tác đó hỗ trợ.
 2. Kiểm tra cả lỗi ở cấp tool và lỗi nghiệp vụ trong phản hồi. Phân biệt kết quả rỗng, thiếu quyền, lỗi xác thực và lỗi hệ thống. Nếu chưa biết kết quả thao tác, nói rõ sự không chắc chắn thay vì khẳng định thành công hoặc thất bại; không tự động lặp lại thao tác.
 3. Không coi số bản ghi của một trang là tổng số hoặc suy ra thống kê toàn hệ thống từ kết quả chưa đầy đủ. Nêu rõ khi dữ liệu chưa đầy đủ hoặc chưa thể xác minh tổng số được yêu cầu.

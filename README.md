@@ -23,7 +23,7 @@ Nếu repository là private, tài khoản GitHub của nhân viên phải có q
 
 ## Phát hành bản cập nhật
 
-Kiểm tra bản `1.0.5`: sau khi đồng bộ marketplace, mở cuộc trò chuyện mới, chọn skill `employee-erp` và hỏi “Kiểm tra phiên bản plugin Employee ERP”. Kết quả mong đợi có `1.0.5` và dấu `ERP-SKILL-105`. Bước này xác nhận skill mới đã được nạp, không kiểm tra kết nối ERP.
+Kiểm tra bản `1.0.6`: sau khi đồng bộ marketplace, mở cuộc trò chuyện mới, chọn skill `employee-erp` và hỏi “Kiểm tra phiên bản plugin Employee ERP”. Kết quả mong đợi có `1.0.6` và dấu `ERP-SKILL-106`. Bước này xác nhận skill mới đã được nạp, không kiểm tra kết nối ERP.
 
 1. Sửa skill hoặc quy tắc và tăng `version` trong `.claude-plugin/plugin.json`; cập nhật phiên bản và dấu kiểm tra tương ứng trong `skills/employee-erp/SKILL.md` cùng ví dụ kiểm tra ở README.
 2. Chạy `claude plugin validate .` và kiểm tra thay đổi trước khi commit.
@@ -66,6 +66,7 @@ Sau khi sửa plugin, chạy `/reload-plugins` hoặc mở phiên mới.
 - `.mcp.json`: cấu hình kết nối MCP.
 - `skills/employee-erp/SKILL.md`: quy trình dùng MCP.
 - `skills/employee-erp/references/rules.md`: quy tắc chung về quyền truy cập, bảo mật, phạm vi và dữ liệu đã xác minh.
+- `skills/employee-erp/references/access-rules.md`: giới hạn dữ liệu cá nhân, xác minh phạm vi trước khi gọi tool lấy dữ liệu.
 - `skills/employee-erp/references/query-rules.md`: quy tắc chọn tool, xử lý lỗi, phân trang và thiếu filter.
 - `skills/employee-erp/references/response-rules.md`: cách trả lời ngắn gọn, trình bày danh sách, liên kết và thông báo giới hạn.
 - `skills/employee-erp/references/id-mapping.md`: mapping ID–tên ORG/HR và quy trình tra cứu tên.
@@ -81,6 +82,8 @@ Với yêu cầu tra cứu hoặc lọc dữ liệu, skill phải kiểm tra fil
 Ví dụ: tra cứu “Chúc Anh Quân” khi chưa có filter `fullname` hoặc tìm kiếm theo tên tương đương phải dừng tra cứu và thông báo cần bổ sung filter; chỉ chuyển sang mã nhân viên nếu tool thực sự hỗ trợ và người dùng cung cấp mã.
 
 ## Phạm vi
+
+Plugin chỉ phục vụ dữ liệu của tài khoản ERP đang đăng nhập. Không tra cứu dữ liệu cá nhân của người khác, kể cả cấp dưới; dữ liệu hóa đơn, opp và ticket chỉ được tra cứu khi xác minh thuộc phạm vi cá nhân được phép xem. Nếu chưa xác minh được, không gọi tool lấy dữ liệu để thử quyền. Các lookup bổ sung ID–tên cũng tuân thủ giới hạn này. Server vẫn phải thực thi phân quyền độc lập với skill.
 
 Đây là mã nguồn plugin và marketplace để cài từ repository GitHub. Việc cài đặt trên tài khoản Claude, đồng bộ tự động, kết nối thực tế, OAuth và việc phát hiện tool cần được kiểm tra trong phiên đã đăng nhập.
 

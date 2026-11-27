@@ -1,5 +1,7 @@
 # Tên đi kèm ID tham chiếu ORG và HR
 
+Trước mọi lookup, áp dụng [access-rules.md](access-rules.md). Mapping chỉ xác định nguồn tên, không cấp thêm quyền xem dữ liệu; nếu lookup ngoài phạm vi cá nhân, giữ ID hoặc tên đã có trong kết quả hợp lệ và báo phần tên chưa thể bổ sung.
+
 ## Căn cứ và phạm vi
 
 Đối chiếu tài liệu repository `erp-ai` ngày 2026-11-27:
