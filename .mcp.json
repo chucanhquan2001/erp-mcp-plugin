@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "employee-gateway": {
+      "type": "http",
+      "url": "https://erp-api-gateway-staging-v2.ebomb.edu.vn/mcp"
+    }
+  }
+}
